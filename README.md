@@ -4,12 +4,14 @@ My program’s purpose is to organize all my current knowledge on health, fitnes
 
 ## App Format
 My program will begin by setting up a profile and asking a series of questions…
+
 - Name
 - Age
 - Weight 
 - Body Fat %
 - What are you goal(s) (choices provided)
 - How many days of the week are you willing to train (Min 3, Max 7)
+
 A list of workouts will then be provided along with a schedule providing which days of the week to do which workout. 
 ## Program Structure
 - Classes
