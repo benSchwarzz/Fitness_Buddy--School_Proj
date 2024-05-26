@@ -1,24 +1,53 @@
 # Summative Proposal
 ## My Program
-My program’s purpose is to organize all my current knowledge on health, fitness, and muscle growth into one versatile program designed to generate a proper training schedule and or workout routine for a specified goal. It will be capable of structuring your workouts in a fashion that makes sense for your goals, and it will be capable of specifying what you need to do on which days of the week. My program will not suggest individual exercises and weighting simply because this requires a great deal of self awareness. 
+My program's purpose is to keep track of workouts. It will be capable of tracking info related to each workout indluding difficulty, type of workout, length, and more. It will also be capable of sorting workouts based on the quantitative data associated to each workout. Additionally, there is room for implementation of insights related to what could be done differently based on the info retrieved from the recorded workouts. 
 
 ## App Format
-My program will begin by setting up a profile and asking a series of questions…
+You will begin at the home page (com_line_1). From here, you will be given three options: (1) log a workout, (2) show me past workouts, and (3) request insights.
+- (1) when logging a workout, you will be asked a series of questions including
+  - date
+  - length
+  - type
+    - if (type == endurance)
+      - distance
+      - avg_hr
+    - if (type == hypertrophy)
+      - volume
+      - location (gym)
+    - if (type == strength)
+      - weight_increase
+      - location (gym)
+  - difficulty (0 to 10)
+- (2) When sorting past workouts you will be asked how you want them to be sorted
+  - by date
+  - by length
+  - by type
+  - or by difficulty
+    - hardest to easiest
+    - easiest to hardest
+- (3) When requesting insights the program will examine your workout history searching for unwanted patterns such as
+  - to many hard workout and not enough rest
+  - only one type of workout and not enough versatility
+  - workouts are too long
+  - not enough rest in between
 
-- Name
-- Age
-- Weight 
-- Body Fat %
-- What are you goal(s) (choices provided)
-- How many days of the week are you willing to train (Min 3, Max 7)
-
-A list of workouts will then be provided along with a schedule providing which days of the week to do which workout. 
 ## Program Structure
 - Classes
   - Test/Client
   - Athlete
   - Workout (Super)
+    - date
+    - length
+    - difficulty
     - Endurance/Cardiovascular (Sub)
+      - type = "endurance";
+      - distance*
+      - avg_hr*
     - Hypertrophy (Muscle Growth) (Sub)
+      - type = "hypertrophy";
+      - volume
+      - location (gym)
     - Strength (Sub)
-  - Schedule
+      - type = "strength";
+      - weight_adjustment
+      - location (gym)
