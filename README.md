@@ -38,10 +38,14 @@ You will begin at the home page (com_line_1). From here, you will be given three
     - Name
     - Age
     - Workout history (ArrayList)
+    - public Athlete(name, age, workout history);
+    - public void sort(sorting method);
+    - public String toString();
   - Workout (Super)
     - date
     - length
     - difficulty
+    - type = "other";
     - Endurance/Cardiovascular (Sub)
       - type = "endurance";
       - distance*
