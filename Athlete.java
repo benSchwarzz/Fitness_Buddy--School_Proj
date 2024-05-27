@@ -40,5 +40,20 @@ public class Athlete
         workouts.add(w);
     }
     
-    public void 
+    public ArrayList<Workout> sort(String method) {
+        ArrayList<Workout> w = new ArrayList<Workout>();
+        
+        if (method.equals("type")) {
+            
+        } else if (method.equals("difficulty")) {
+            
+        } else if (method.equals("date")) {
+            
+        } else if (method.equals("length")) {
+            
+        }
+        
+        return w;
+    }
 }
+
