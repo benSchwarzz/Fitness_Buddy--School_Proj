@@ -35,6 +35,9 @@ You will begin at the home page (com_line_1). From here, you will be given three
 - Classes
   - Test/Client
   - Athlete
+    - Name
+    - Age
+    - Workout history (ArrayList)
   - Workout (Super)
     - date
     - length
