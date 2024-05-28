@@ -9,7 +9,7 @@ You will begin at the home page (com_line_1). From here, you will be given three
   - length
   - type
     - if (type == endurance)
-      - distance
+      - distance 
       - avg_hr
     - if (type == hypertrophy)
       - volume
