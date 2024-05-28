@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.*;
 
 public class Athlete
 {
@@ -40,20 +41,41 @@ public class Athlete
         workouts.add(w);
     }
     
-    public ArrayList<Workout> sort(String method) {
+    public void sort(String method) {
         ArrayList<Workout> w = new ArrayList<Workout>();
         
         if (method.equals("type")) {
+            for (Workout i : this.workouts) {
+                if (i.type == "Hypertrophy") {
+                    w.add(i);
+                }
+            }
+            for (Workout i : this.workouts) {
+                if (i.type == "Strength") {
+                    w.add(i);
+                }
+            }
+            for (Workout i : this.workouts) {
+                if (i.type == "Endurance") {
+                    w.add(i);
+                }
+            }
+            
+            for (Workout i : w) {
+                System.out.println(i);
+            }
             
         } else if (method.equals("difficulty")) {
             
+            
         } else if (method.equals("date")) {
+            
             
         } else if (method.equals("length")) {
             
         }
-        
-        return w;
+        for (Workout i : w) {
+            System.out.println(i);
+        }
     }
 }
-

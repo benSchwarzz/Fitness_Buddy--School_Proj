@@ -10,4 +10,10 @@ public class Hypertrophy extends Workout
         this.volume = d;
         this.location = e;
     }
+    
+    public String toString() {
+        String txt = "Date: " + this.date + "\nLength: " + this.length + "\nDifficulty: " + this.difficulty + "\nType: Hypertrophy \nVolume: " + this.volume + "\nLocation: " + this.location;
+        
+        return txt;
+    }
 }

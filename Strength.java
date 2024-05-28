@@ -10,4 +10,10 @@ public class Strength extends Workout
         this.weight_adjustment = d;
         this.location = e;
     }
+    
+    public String toString() {
+        String txt = "Date: " + this.date + "\nLength: " + this.length + "\nDifficulty: " + this.difficulty + "\nType: Hypertrophy \nWeight Adjustment: " + this.weight_adjustment + "\nLocation: " + this.location;
+        
+        return txt;
+    }
 }

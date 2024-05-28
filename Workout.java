@@ -13,4 +13,10 @@ public class Workout
         this.difficulty = diff;
         this.type = t;
     }
+    
+    public String toString() {
+        String txt = "Date: " + this.date + "\nLength: " + this.length + "\nDifficulty: " + this.difficulty + "\nType: none";
+        
+        return txt;
+    }
 }
