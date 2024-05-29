@@ -12,7 +12,7 @@ public class Strength extends Workout
     }
     
     public String toString() {
-        String txt = "Date: " + this.date + "\nLength: " + this.length + "\nDifficulty: " + this.difficulty + "\nType: Hypertrophy \nWeight Adjustment: " + this.weight_adjustment + "\nLocation: " + this.location;
+        String txt = "Date: " + this.date + "\nLength: " + this.length + "\nDifficulty: " + this.difficulty + "\nType: Strength \nWeight Adjustment: " + this.weight_adjustment + "\nLocation: " + this.location + "\n---------------------------------------*";
         
         return txt;
     }

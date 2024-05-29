@@ -12,7 +12,7 @@ public class Hypertrophy extends Workout
     }
     
     public String toString() {
-        String txt = "Date: " + this.date + "\nLength: " + this.length + "\nDifficulty: " + this.difficulty + "\nType: Hypertrophy \nVolume: " + this.volume + "\nLocation: " + this.location;
+        String txt = "Date: " + this.date + "\nLength: " + this.length + "\nDifficulty: " + this.difficulty + "\nType: Hypertrophy \nVolume: " + this.volume + "\nLocation: " + this.location + "\n---------------------------------------*";
         
         return txt;
     }

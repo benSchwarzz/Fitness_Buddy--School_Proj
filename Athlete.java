@@ -19,22 +19,16 @@ public class Athlete
         this.workouts = w;
     }
     
-    public Workout mark_workout(Date d, int l, byte dif, int dist, int hr) {
-        Endurance x = new Endurance(d, l, dif, dist, hr);
-        
-        return x;
+    public void mark_workout(Date d, int l, byte dif, float dist, int hr) {
+        this.workouts.add(new Endurance(d, l, dif, dist, hr));
     }
     
-    public Workout mark_workout(Date d, int l, byte dif, int v, String loc) {
-        Hypertrophy x = new Hypertrophy(d, l, dif, v, loc);
-        
-        return x;
+    public void mark_workout(Date d, int l, byte dif, int v, String loc) {
+        this.workouts.add(new Hypertrophy(d, l, dif, v, loc));
     }
     
-    public Workout mark_workout(Date d, int l, byte dif, byte w, String loc) {
-        Strength x = new Strength(d, l, dif, w, loc);
-        
-        return x;
+    public void mark_workout(Date d, int l, byte dif, byte w, String loc) {
+        this.workouts.add(new Strength(d, l, dif, w, loc));
     }
     
     public void log_workout(Workout w) {
@@ -42,39 +36,21 @@ public class Athlete
     }
     
     public void sort(String method) {
-        ArrayList<Workout> w = new ArrayList<Workout>();
-        
         if (method.equals("type")) {
-            for (Workout i : this.workouts) {
-                if (i.type == "Hypertrophy") {
-                    w.add(i);
-                }
-            }
-            for (Workout i : this.workouts) {
-                if (i.type == "Strength") {
-                    w.add(i);
-                }
-            }
-            for (Workout i : this.workouts) {
-                if (i.type == "Endurance") {
-                    w.add(i);
-                }
-            }
-            
-            for (Workout i : w) {
-                System.out.println(i);
-            }
-            
+            Collections.sort(this.workouts, new Sort_by_type());
+
         } else if (method.equals("difficulty")) {
             Collections.sort(this.workouts, new Sort_by_difficulty());
             
         } else if (method.equals("date")) {
-            
+            Collections.sort(this.workouts, new Sort_by_date());
             
         } else if (method.equals("length")) {
+            Collections.sort(this.workouts, new Sort_by_length());
             
         }
-        for (Workout i : w) {
+        
+        for (Workout i : this.workouts) {
             System.out.println(i);
         }
     }
