@@ -66,12 +66,7 @@ public class Athlete
             }
             
         } else if (method.equals("difficulty")) {
-            @Override
-            Collections.sort(this.workouts, new Comparator<Workout>() {
-                public int compare(Workout x, Workout y) {
-                    return x.difficulty.compareTo(y.difficulty);
-                }
-            });
+            Collections.sort(this.workouts, new Sort_by_difficulty());
             
         } else if (method.equals("date")) {
             
