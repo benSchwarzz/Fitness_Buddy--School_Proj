@@ -54,4 +54,13 @@ public class Athlete
             System.out.println(i);
         }
     }
+    
+    public void offer_insight() {
+        
+    }
 }
+
+
+
+
+
