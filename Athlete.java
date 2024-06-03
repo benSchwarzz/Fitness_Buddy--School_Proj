@@ -13,10 +13,9 @@ public class Athlete
         this.age = 0;
     }
     
-    public Athlete(String n, byte a, ArrayList<Workout> w) {
+    public Athlete(String n, byte a) {
         this.name = n;
         this.age = a;
-        this.workouts = w;
     }
     
     public void mark_workout(Date d, int l, byte dif, float dist, int hr) {
