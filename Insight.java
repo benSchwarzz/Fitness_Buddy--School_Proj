@@ -12,7 +12,7 @@ public class Insight
         insight6 = "Not enough workouts logged to make an astute judgement";
     Athlete athlete;
            
-    public ArrayList<String> Insight(Athlete a) {
+    public Insight(Athlete a) {
         this.athlete = a;
         ArrayList<String> insights = new ArrayList<String>();
         
@@ -85,6 +85,8 @@ public class Insight
             insights.add(insight6);
         }
         
-        return insights;
+        for (int i = 1; i < insights.size() + 1; i ++) {
+            System.out.println("(" + i + ") " + insights.get(i - 1));
+        }
     }
 }

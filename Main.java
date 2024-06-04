@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Main
 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Scanner in = new Scanner(System.in);
         System.out.print('\u000C');
         
@@ -21,9 +21,13 @@ public class Main
         boolean run = true;
         while (run) {
             System.out.print('\u000C');
-            System.out.println("Command Message");
+            System.out.println("The following are the commands\n(1) Log a workout\n(2) Sort past workouts\n(3) Request Insights\n(4) Quit\nCurrently, you have logged a total of " + ath.workouts.size() + " workouts");
+            System.out.print("Command: ");
             com_line_1 = in.nextByte();
+            in.nextLine();
             
+            Thread.sleep(500);
+        
             if (com_line_1 == 1) { // Log a workout
                 System.out.print('\u000C');
                 
@@ -52,7 +56,7 @@ public class Main
                     difficulty = 10;
                 }
                 
-                boolean test = false;
+                
                 if (type.equals("endurance")) {
                     System.out.print("Distance: ");
                     int x = in.nextInt();
@@ -60,15 +64,16 @@ public class Main
                     int y  = in.nextInt();
                     
                     ath.mark_workout(date, length, difficulty, x, y);
-                    System.out.print("Your workout has been logged");
+                    System.out.print("Your endurance workout has been logged");
                 } else if (type.equals("hypertrophy")) {
                     System.out.print("Volume: ");
                     int x = in.nextInt();
+                    in.nextLine();
                     System.out.print("Location: ");
                     String y = in.nextLine();
                     
                     ath.mark_workout(date, length, difficulty, x, y);
-                    System.out.print("Your workout has been logged");
+                    System.out.print("Your hypertrophy workout has been logged");
                 } else if (type.equals("strength")) {
                     System.out.print("Weight Adjustment: ");
                     byte x = in.nextByte();
@@ -76,7 +81,7 @@ public class Main
                     String y = in.nextLine();
                     
                     ath.mark_workout(date, length, difficulty, x, y);
-                    System.out.print("Your workout has been logged");
+                    System.out.print("Your strength workout has been logged");
                 } else {
                     System.out.print("Invalid type: please try again");
                 }
@@ -87,11 +92,20 @@ public class Main
                     System.out.print("How would you like your workouts to be sorted: ");
                     String sort = in.nextLine().toLowerCase();
                     ath.sort(sort);
+                    
+                    System.out.print("Hit Enter to go back Home");
+                    String next = in.nextLine();
+                    
                 } else {
                     System.out.println("Not enough workouts logged");
+                    Thread.sleep(500);
                 }
                 
             } else if (com_line_1 == 3) { // Request insights
+                new Insight(ath);
+                
+                System.out.print("Hit Enter to go back Home");
+                String next = in.nextLine();
                 
             } else if (com_line_1 == 4) { // Quit
                 run = false;
