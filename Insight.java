@@ -16,7 +16,7 @@ public class Insight
         this.athlete = a;
         ArrayList<String> insights = new ArrayList<String>();
         
-        if (this.athlete.workouts.size() > 4) {
+        if (this.athlete.workouts.size() > 3) {
             /////////////////////////////////////////////////////////// Versatility
             float end_percent = 0F;
             float hyp_percent = 0F;
@@ -68,7 +68,7 @@ public class Insight
             long rest;
             long avg_rest = 0;
             
-            for (int i = 0; i < this.athlete.workouts.size(); i++) {
+            for (int i = 0; i < this.athlete.workouts.size() - 1; i++) {
                 rest = this.athlete.workouts.get(i).date.getTime() - this.athlete.workouts.get(i + 1).date.getTime();
                 avg_rest += rest;
             }

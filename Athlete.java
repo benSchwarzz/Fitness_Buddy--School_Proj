@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.*;
@@ -53,13 +54,4 @@ public class Athlete
             System.out.println(i);
         }
     }
-    
-    public void offer_insight() {
-        
-    }
 }
-
-
-
-
-
