@@ -5,8 +5,8 @@ import java.util.*;
 
 public class Athlete
 {
-    String name;
-    byte age;
+    private String name;
+    private byte age;
     ArrayList<Workout> workouts = new ArrayList<Workout>();
     
     public Athlete() {

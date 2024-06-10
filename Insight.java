@@ -9,7 +9,8 @@ public class Insight
         insight3 = "Shorten your workouts to avoid overworking yourself",
         insight4 = "Hard workouts are great, but not too often. Otherwise you will be prone to injuries",
         insight5 = "Try doing a variety of different type of workouts. This will allow you to be more well rounded",
-        insight6 = "Not enough workouts logged to make an astute judgement";
+        insight6 = "Not enough workouts logged to make an astute judgement",
+        insight7 = "You're workouts are too easy. This may limit how much improvement you see over time";
     Athlete athlete;
            
     public Insight(Athlete a) {
@@ -51,6 +52,10 @@ public class Insight
             if (avg_dif > 7) {
                 insights.add(insight4);
             }
+            
+            if (avg_dif < 4) {
+                insights.add(insight7);
+            }
             //////////////////////////////////////////////////////////////// Length
             float avg_len = 0;
             
@@ -65,6 +70,7 @@ public class Insight
             }
             //////////////////////////////////////////////////////////////// Rest time
             athlete.sort("date");
+            System.out.print('\u000C');
             long rest;
             long avg_rest = 0;
             
@@ -79,7 +85,6 @@ public class Insight
             } else {
                 insights.add(insight1);
             }
-            
             
         } else {
             insights.add(insight6);

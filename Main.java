@@ -71,12 +71,14 @@ public class Main
                     difficulty = in.nextByte();
                     if (difficulty > 10) {
                         difficulty = 10;
+                    } else if (difficulty < 1) {
+                        difficulty = 1;
                     }
                     
                     if (type == 1) {
-                        System.out.print("Distance: ");
+                        System.out.print("Distance (km): ");
                         x = in.nextInt();
-                        System.out.print("Average HR");
+                        System.out.print("Average HR: ");
                         y  = in.nextInt();
                         
                         ath.mark_workout(date, length, difficulty, x, y);
