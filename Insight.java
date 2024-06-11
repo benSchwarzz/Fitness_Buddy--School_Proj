@@ -3,7 +3,7 @@ import java.util.Date;
 
 public class Insight
 {
-    String 
+    String // All possible insights
         insight1 = "Give yourself more time to rest. Your body needs to recover",
         insight2 = "Try to fill in some of your rest time",
         insight3 = "Shorten your workouts to avoid overworking yourself",
@@ -18,7 +18,7 @@ public class Insight
         ArrayList<String> insights = new ArrayList<String>();
         
         if (this.athlete.workouts.size() > 3) {
-            /////////////////////////////////////////////////////////// Versatility
+            /////////////////////////////////////////////////////////// Determination of insights based on Versatility
             float end_percent = 0F;
             float hyp_percent = 0F;
             float str_percent = 0F;
@@ -40,7 +40,7 @@ public class Insight
             if (end_percent > 70 || hyp_percent > 70 || str_percent > 70) {
                 insights.add(insight5);
             }
-            ////////////////////////////////////////////////////////////// Difficulty
+            ////////////////////////////////////////////////////////////// Determination of insights based on Difficulty
             float avg_dif = 0;
             
             for (Workout i : this.athlete.workouts) {
@@ -56,7 +56,7 @@ public class Insight
             if (avg_dif < 4) {
                 insights.add(insight7);
             }
-            //////////////////////////////////////////////////////////////// Length
+            //////////////////////////////////////////////////////////////// Determination of insights based on Length
             float avg_len = 0;
             
             for (Workout i : this.athlete.workouts) {
@@ -68,7 +68,7 @@ public class Insight
             if (avg_len > 75) {
                 insights.add(insight3);
             }
-            //////////////////////////////////////////////////////////////// Rest time
+            //////////////////////////////////////////////////////////////// Determination of insights based on Rest time
             athlete.sort("date");
             System.out.print('\u000C');
             long rest;
@@ -86,11 +86,11 @@ public class Insight
                 insights.add(insight1);
             }
             
-        } else {
+        } else { // If there is not enough workouts logged
             insights.add(insight6);
         }
         
-        for (int i = 1; i < insights.size() + 1; i ++) {
+        for (int i = 1; i < insights.size() + 1; i ++) { // Print directly from constructor method
             System.out.println("(" + i + ") " + insights.get(i - 1));
         }
     }
