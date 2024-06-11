@@ -33,11 +33,11 @@ public class Athlete
     }
     //------------------------//
     
-    public void log_workout(Workout w) {
+    public void log_workout(Workout w) { // Mainly for testing purposes
         workouts.add(w);
     }
     
-    public void sort(String method) {
+    public void sort(String method) { // Sort methods
         if (method.equals("type")) {
             Collections.sort(this.workouts, new Sort_by_type());
 
