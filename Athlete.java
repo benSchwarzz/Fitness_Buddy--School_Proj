@@ -19,6 +19,7 @@ public class Athlete
         this.age = a;
     }
     
+    // 3 overloaded workouts for logging the 3 different types of workout
     public void mark_workout(Date d, int l, byte dif, float dist, int hr) {
         this.workouts.add(new Endurance(d, l, dif, dist, hr));
     }
@@ -30,6 +31,7 @@ public class Athlete
     public void mark_workout(Date d, int l, byte dif, byte w, String loc) {
         this.workouts.add(new Strength(d, l, dif, w, loc));
     }
+    //------------------------//
     
     public void log_workout(Workout w) {
         workouts.add(w);

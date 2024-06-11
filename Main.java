@@ -1,39 +1,44 @@
+// This is the user interface for the entire program. This is where the program will run
+
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Date; // to record and compare dates
 
 public class Main
 {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException { // The throw statement is meant to compensate for the Thread.sleep() function used to sleep the program
         
         Scanner in = new Scanner(System.in);
         System.out.print('\u000C');
         
+        // Variables //
         byte com_line_1;
         byte com_line_2;
-        com_line_1 = 0;
-        com_line_2 = 0;
-        byte month = 0;
-        byte day = 0;
-        byte hour = 0;
-        byte min = 0;
-        int length = 0;
-        byte difficulty = 0;
-        byte type = 0;
-        int x = 0;
-        int y = 0;
-        String y_ = "";
+        byte month;
+        byte day;
+        byte hour;
+        byte min;
+        int length;
+        byte difficulty;
+        byte type;
+        int x;
+        int y;
+        String y_;
+        //---------------//
         
+        // Initial Setup //
         System.out.println("Welcome to FitnessBuddy! In order to get started, please enter the following information");
         System.out.print("Enter Name: ");
         String name = in.nextLine();
         System.out.print("Enter Age: ");
         byte age = in.nextByte();
         Athlete ath = new Athlete(name, age);
+        //---------------//
         
         boolean run = true;
         while (run) {
-            try {
+            try { // This try catch function simply catches any kind of error that may happen at any point and brings you back to the home page
+                // Home page message and wait for input //
                 System.out.print('\u000C');
                 System.out.println("The following are the commands\n(1) Log a workout\n(2) Sort past workouts\n(3) Request Insights\n(4) Quit\nCurrently, you have logged a total of " + ath.workouts.size() + " workouts");
                 System.out.print("Command: ");
@@ -41,8 +46,8 @@ public class Main
                 in.nextLine();
                 
                 Thread.sleep(500);
-            
-            
+                //---------------//
+                
                 if (com_line_1 == 1) { // Log a workout
                     
                     System.out.print('\u000C');
@@ -61,7 +66,7 @@ public class Main
                     System.out.print("Minute: ");
                     min = in.nextByte();
                     
-                    Date date = new Date(2024, month + 1, day, hour, min);
+                    Date date = new Date(2024, month + 1, day, hour, min); // For the purpose of user efficiency, we can assume it's year 2024
                     
                     System.out.print("Length (in minutes): ");
                     length = in.nextInt();
@@ -74,13 +79,14 @@ public class Main
                         difficulty = 1;
                     }
                     
+                    // Type specific information
                     if (type == 1) {
                         System.out.print("Distance (km): ");
                         x = in.nextInt();
                         System.out.print("Average HR: ");
                         y  = in.nextInt();
                         
-                        ath.mark_workout(date, length, difficulty, x, y);
+                        ath.mark_workout(date, length, difficulty, x, y); // Overloaded function
                         System.out.print("Your endurance workout has been logged");
                     } else if (type == 2) {
                         System.out.print("Volume: ");
@@ -89,7 +95,7 @@ public class Main
                         System.out.print("Location: ");
                         y_ = in.nextLine();
                         
-                        ath.mark_workout(date, length, difficulty, x, y_);
+                        ath.mark_workout(date, length, difficulty, x, y_); // Overloaded function
                         System.out.print("Your hypertrophy workout has been logged");
                     } else if (type == 3) {
                         System.out.print("Weight Adjustment: ");
@@ -98,15 +104,15 @@ public class Main
                         System.out.print("Location: ");
                         y_ = in.nextLine();
                         
-                        ath.mark_workout(date, length, difficulty, x, y_);
+                        ath.mark_workout(date, length, difficulty, x, y_); // Overloaded function
                         System.out.print("Your strength workout has been logged");
                     } else {
-                        System.out.print("Invalid type: please try again");
+                        System.out.print("Invalid type: please try again"); // If it's invalid input the workout is trashed and you must restart
                     }
                     
                 } else if (com_line_1 == 2) { // Show past workouts
                 
-                    if (ath.workouts.size() > 0) {
+                    if (ath.workouts.size() > 0) { // Make sure user has enough workouts logged
                         System.out.print("How would you like your workouts to be sorted ((1) Type, (2) Date, (3) Difficulty, (4) Length): ");
                         byte sort = in.nextByte();
                         in.nextLine();
@@ -119,7 +125,7 @@ public class Main
                         }
                         
                         
-                        System.out.print("Hit Enter to go back Home");
+                        System.out.print("Hit Enter to go back Home"); // Wait for user to be done before returning to home page
                         String next = in.nextLine();
                         
                     } else {
@@ -130,7 +136,7 @@ public class Main
                 } else if (com_line_1 == 3) { // Request insights
                     new Insight(ath);
                     
-                    System.out.print("Hit Enter to go back Home");
+                    System.out.print("Hit Enter to go back Home"); // Wait for user to be done before returning to home page
                     String next = in.nextLine();
                     
                 } else if (com_line_1 == 4) { // Quit
@@ -141,7 +147,7 @@ public class Main
             } catch (Exception e) {
                     System.out.println("Exception caught");
                     Thread.sleep(500);
-                    in.nextLine();
+                    in.nextLine(); // Clear the scanner object so the same error doesn't continue to happen in a loop
             }
         }
     }
