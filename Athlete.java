@@ -11,7 +11,7 @@ public class Athlete
     
     public Athlete() {
         this.name = "N/A";
-        this.age = 0;
+        this.age = 18;
     }
     
     public Athlete(String n, byte a) {

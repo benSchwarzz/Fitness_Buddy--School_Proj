@@ -12,6 +12,8 @@ public class Main
         System.out.print('\u000C');
         
         // Variables //
+        String name = "N/A";
+        byte age = 18;
         byte com_line_1;
         byte com_line_2;
         byte month;
@@ -26,16 +28,21 @@ public class Main
         String y_;
         //---------------//
         
+        boolean run = true;
         // Initial Setup //
+        try {
         System.out.println("Welcome to FitnessBuddy! In order to get started, please enter the following information");
         System.out.print("Enter Name: ");
-        String name = in.nextLine();
+        name = in.nextLine();
         System.out.print("Enter Age: ");
-        byte age = in.nextByte();
+        age = in.nextByte();
+        } catch (Exception e) {
+            System.out.println("Invalid input: please restart the program");
+            run = false;
+        }
         Athlete ath = new Athlete(name, age);
         //---------------//
         
-        boolean run = true;
         while (run) {
             try { // This try catch function simply catches any kind of error that may happen at any point and brings you back to the home page
                 // Home page message and wait for input //
@@ -56,7 +63,7 @@ public class Main
                     type = in.nextByte();
                     
                     // Date
-                    System.out.println("-- Date --");
+                    System.out.println("-- Date --\n(Please respond in integer values)");
                     System.out.print("Month: ");
                     month = in.nextByte();
                     System.out.print("Day: ");
