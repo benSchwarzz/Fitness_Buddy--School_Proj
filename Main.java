@@ -40,7 +40,7 @@ public class Main
             System.out.println("Invalid input: please restart the program");
             run = false;
         }
-        Athlete ath = new Athlete(name, age);
+        Athlete ath = new Athlete(name, age); // "ath" is short for athlete
         //---------------//
         
         while (run) {
