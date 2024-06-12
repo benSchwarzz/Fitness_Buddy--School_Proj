@@ -1,3 +1,4 @@
+// A holder class for all the workouts, insights, and general information
 
 import java.util.ArrayList;
 import java.util.Date;
