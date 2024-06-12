@@ -1,3 +1,4 @@
+// Provides Insights on workout history
 // No need for default constructor as the UI won't utilize this
 import java.util.*;
 import java.util.Date;
