@@ -1,4 +1,5 @@
 // A holder class for all the workouts, insights, and general information
+// Collections.sort is a method pulled from a library to easily sort a list of objects based on object parameters
 
 import java.util.ArrayList;
 import java.util.Date;
